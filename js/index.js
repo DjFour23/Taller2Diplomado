@@ -31,54 +31,70 @@ const crearUsuario = async () => {
   let email = document.getElementById("email").value;
   let identificacion = document.getElementById("identificacion").value;
   let psw = document.getElementById("psw").value;
+  var isRegistered = false;
+
+  for (let i = 0; i < usuarios.length; i++) {
+    if (usuarios[i].identificacion == identificacion) {
+      isRegistered = true;
+      break;
+    }
+  }
 
   if (email.includes("@") && email.includes(".")) {
-    if (
-      name != "" &&
-      lastName != "" &&
-      identificacion != "" &&
-      identificacion > 0 &&
-      email != "" &&
-      psw != ""
-    ) {
-      let usuario = {
-        id: usuarios.length + 1,
-        nombre: name,
-        apellido: lastName,
-        identificacion: identificacion,
-        correo: email,
-        contraseña: psw,
-      };
-
-      await usuarios.push(usuario);
-      listar();
-      backToTheBasics();
-
-      Swal.fire({
-        title: "Usuario creado correctamente",
-        width: 600,
-        padding: "3em",
-        color: "#716add",
-        background: "#fff url(/images/trees.png)",
-        backdrop: `
-          rgba(0,0,123,0.4)
-          url("/images/nyan-cat.gif")
-          left top
-          no-repeat
-        `,
-      });
-    } else if(identificacion <= 0){
+    if (isRegistered) {
       Swal.fire({
         icon: "error",
         title: "Oops...",
-        text: "La identificacion debe ser igual o mayor a 1 xd!",
+        text: "El usuario ya se encuentra registrado",
       });
     } else {
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "Campos vacios!",
-      });
+      if (
+        name != "" &&
+        lastName != "" &&
+        identificacion != "" &&
+        identificacion > 0 &&
+        email != "" &&
+        psw != ""
+      ) {
+        let usuario = {
+          id: usuarios.length + 1,
+          nombre: name,
+          apellido: lastName,
+          identificacion: identificacion,
+          correo: email,
+          contraseña: psw,
+        };
+
+        await usuarios.push(usuario);
+        listar();
+        backToTheBasics();
+
+        Swal.fire({
+          title: "Usuario creado correctamente",
+          width: 600,
+          padding: "3em",
+          color: "#716add",
+          background: "#fff url(/images/trees.png)",
+          backdrop: `
+            rgba(0,0,123,0.4)
+            url("/images/nyan-cat.gif")
+            left top
+            no-repeat
+          `,
+        });
+      } else if (identificacion <= 0) {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "La identificacion debe ser igual o mayor a 1 xd!",
+        });
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Campos vacios!",
+        });
+      }
     }
   } else {
     Swal.fire({
