@@ -21,106 +21,92 @@
   </head>
 
   <body>
-    <div class="container">
-      <div class="d-flex justify-content-center mt-5">
-          <div class="row align-items-center">
-            <div class="col-sm-6 mb-3 mb-sm-0">
-              <div class="card">
-                <div class="card-body">
-                  <form>
-                    <div class="row mb-4">
-                      <div class="col">
-                        <div class="form-outline">
-                          <label class="form-label" for="name"
-                            >Nombre</label
-                          >
-                          <input type="text" id="name" class="form-control" />
-                        </div>
-                      </div>
-                      <div class="col">
-                        <div class="form-outline">
-                          <label class="form-label" for="lastName"
-                            >Apeliido</label
-                          >
-                          <input
-                            type="text"
-                            id="lastName"
-                            class="form-control"
-                          />
-                        </div>
-                      </div>
+    <div class="container mt-5" >
+      <div class="row row-cols-1 row-cols-md-2 g-4 align-items-center">
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <form>
+                <div class="row mb-4">
+                  <div class="col">
+                    <div class="form-outline">
+                      <label class="form-label" for="name">Nombre</label>
+                      <input type="text" id="name" class="form-control" />
                     </div>
-
-                    <div class="row mb-4">
-                      <div class="col">
-                        <div class="form-outline">
-                          <label class="form-label" for="email"
-                            >Email</label
-                          >
-                          <input type="email" id="email" class="form-control" />
-                        </div>
-                      </div>
-                      <div class="col">
-                        <div class="form-outline">
-                          <label class="form-label" for="id"
-                            >Identificacion</label
-                          >
-                          <input
-                            type="number"
-                            id="identificacion"
-                            class="form-control"
-                          />
-                        </div>
-                      </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-outline">
+                      <label class="form-label" for="lastName">Apellido</label>
+                      <input type="text" id="lastName" class="form-control" />
                     </div>
-                    <div class="form-outline mb-4">
-                      <label class="form-label" for="psw">Contraseña</label>
-                      <input type="password" id="psw" class="form-control" />
-                    </div>
-                    <div class="row mb-4">
-                      <div class="col">
-                        <button
-                          type="button"
-                          class="btn btn-primary btn-block mb-4 col-6"
-                          onclick="crearUsuario()"
-                        >
-                          Crear
-                        </button>
-                      </div>
-                      <div class="col">
-                        <button
-                          type="button"
-                          class="btn btn-danger btn-block mb-4 col-6"
-                          onclick="backToTheBasics()"
-                        >
-                          Cancelar
-                        </button>
-                      </div>
-                    </div>
-                  </form>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <div class="table-responsive">
-                <table
-                  class="table table-responsive table-dark table-hover table-striped"
-                >
-                  <thead>
-                    <tr>
-                      <th scope="col" class="text-center">ID</th>
-                      <th scope="col" class="text-center">Nombre</th>
-                      <th scope="col" class="text-center">Apellido</th>
-                      <th scope="col" class="text-center">Identificacion</th>
-                      <th scope="col" class="text-center">Email</th>
-                      <th scope="col" class="text-center">Contraseña</th>
-                    </tr>
-                  </thead>
-                  <tbody id="tbody"></tbody>
-                </table>
-              </div>
+
+                <div class="row mb-4">
+                  <div class="col">
+                    <div class="form-outline">
+                      <label class="form-label" for="email">Email</label>
+                      <input type="email" id="email" class="form-control" />
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-outline">
+                      <label class="form-label" for="id">Identificacion</label>
+                      <input
+                        type="number"
+                        id="identificacion"
+                        class="form-control"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="psw">Contraseña</label>
+                  <input type="password" id="psw" class="form-control" />
+                </div>
+                <div class="row mb-4">
+                  <div class="col">
+                    <button
+                      type="button"
+                      class="btn btn-primary btn-block col-8"
+                      onclick="crearUsuario()"
+                    >
+                      Crear
+                    </button>
+                  </div>
+                  <div class="col">
+                    <button
+                      type="button"
+                      class="btn btn-danger btn-block col-8"
+                      onclick="backToTheBasics()"
+                    >
+                      Cancelar
+                    </button>
+                  </div>
+                </div>
+              </form>
             </div>
           </div>
+        </div>
+        <div class="col">
+          <div class="table-responsive">
+            <table
+              class="table table-responsive table-dark table-hover table-striped"
+            >
+              <thead>
+                <tr>
+                  <th scope="col" class="text-center">ID</th>
+                  <th scope="col" class="text-center">Nombre</th>
+                  <th scope="col" class="text-center">Apellido</th>
+                  <th scope="col" class="text-center">Identificacion</th>
+                  <th scope="col" class="text-center">Email</th>
+                  <th scope="col" class="text-center">Contraseña</th>
+                </tr>
+              </thead>
+              <tbody id="tbody"></tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
 
